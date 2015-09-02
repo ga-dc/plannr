@@ -1,5 +1,4 @@
 var Map = function(){
-  self = this;
 
   // Event listeners
   $("#submit").on( "click", function(){
@@ -7,7 +6,7 @@ var Map = function(){
     var searchTerm = $("#placeName").val();
     searchTerm = searchTerm.replace( / /g, "+" );
     $.ajax({
-      url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchTerm + "&pretty=1&key=62ee540db24fba16c87a0ba5d353d3a7"
+      url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchTerm + "&pretty=1&key=INSERT-KEY-HERE"
     }).done( function( res ){
       console.log( res );
       var lat = res.results[0].geometry.lat;
