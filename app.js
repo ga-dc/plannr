@@ -4,7 +4,6 @@ var map = L.map('map').setView([38.9038829, -77.0360032], 15);
 //'map' is the ID of the div that you are going to attach this api to
 //this is because in leaflet you first add the coordinates
 //and then you add all of the tiling in there as well.
-
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
