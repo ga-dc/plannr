@@ -13,3 +13,16 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'edwardpark.c39e66b5',
     accessToken: 'pk.eyJ1IjoiZWR3YXJkcGFyayIsImEiOiJmODIzNDE3ZDFlM2M3NGU3ZDJhMzFhNGVjNjYwY2E3ZiJ9.jWQ65mL9Y_w2PuampvtDsQ'
 }).addTo(map);
+
+
+var key = "2aa7c6d03fc9a9c67e9e5afcf816da5a";
+var loc;
+$("form").on("submit",function(){
+  event.preventDefault();
+  loc = $("#locationID").val();
+//plug into api key
+//send out call
+//refactor to function
+//create pointset
+//display
+});
