@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+<link rel="stylesheet" href="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/css/L.Control.OpenCageSearch.dev.css" />
+<script src="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/js/L.Control.OpenCageSearch.dev.js"></script>
+
+<link ref =“stylesheet” href =“style.css”  type=“text/css” />
+      <title> Plannr</title>
+
+   </head>
+  <body>
+
+    <form method="post" action="/address" class="address">
+      <p class="title">Plan Your Next Destination</p>
+
+      <input type="text" placeholder="Street Address" name="street" id="street">
+      <input type= "text"  placeholder="City" name="City" id="city">
+      <input type= "text"  placeholder="State" name="State" id="state">
+      <input type= "text"  placeholder="Zipcode" name="Zipcode" id="zip">
+
+      <input type="submit" value="Submit" id="submit">
+    </form>
+
+<div id="map"></div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</hmtl>
