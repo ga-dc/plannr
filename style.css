@@ -1,0 +1,8 @@
+.locForm {
+    margin: 15px;
+    background-color: #eee;
+}
+
+#map {
+  height: 500px;    /* Let's give our map a height so we can see it. */
+}
