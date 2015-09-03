@@ -4,5 +4,9 @@
 }
 
 #map {
-  height: 500px;    /* Let's give our map a height so we can see it. */
+  height: 500px;
+}
+
+button {
+    margin: 10px;
 }
