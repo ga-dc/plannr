@@ -20,9 +20,11 @@ var loc;
 $("form").on("submit",function(){
   event.preventDefault();
   loc = $("#locationID").val();
-//plug into api key
-//send out call
-//refactor to function
-//create pointset
-//display
+  var url = "http://api.opencagedata.com/geocode/v1/json?q="+ loc +"&key="+key;
+  $.get(url,function(data){
+    var latitudeID = data.results[0].geometry.lat;
+    var longitudeID = data.results[0].geometry.lng;
+    L.marker([latitudeID,longitudeID]).addTo( map );
+  });
+
 });
