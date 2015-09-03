@@ -31,16 +31,26 @@ $(document).ready(function(){
 
   submitButton.on("click", function(e){
     e.preventDefault();
+
     var userLocation = $("#userLocation").val();
     var userNote = $("#userNote").val();
     var locationArray = [];
+
     $.getJSON( "http://api.opencagedata.com/geocode/v1/json?q=" + userLocation + "&key=fe21a1be30f41c2a8a6e3706cebcfff2", function(req,res){
     }).done(function(response){
+
       locationArray = [response.results[0].geometry.lat, response.results[0].geometry.lng];
-      geoJsonArray = [response.results[0].geometry.lng, response.results[0].geometry.lat]
+      L.marker(locationArray).addTo( map ).bindPopup("<h3>"+ userLocation +"</h3><p>Coordinates: "+ locationArray +"</p><p>"+ userNote+"</p>");
+
+      //reverse latlng for geoJSON, save in array for MultiLineString
+      geoJsonArray = [response.results[0].geometry.lng, response.results[0].geometry.lat];
       tripLocations.push(geoJsonArray);
-      L.marker(locationArray).addTo( map ).bindPopup("<h3>"+ userLocation +"</h3><p>"+ userNote+"</p>");
       createGeoJson(tripLocations);
+
+      //clear input values
+      $("#userLocation").val("");
+      $("#userNote").val("");
+
     }).fail(function(){
       console.log("json req failed");
     })
