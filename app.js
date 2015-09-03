@@ -15,7 +15,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(map);
 
 
-var key = "2aa7c6d03fc9a9c67e9e5afcf816da5a";
+var key = ;
 var loc;
 $("form").on("submit",function(){
   event.preventDefault();
