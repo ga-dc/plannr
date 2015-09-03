@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
    <head>
+     <meta charset="UTF-8">
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+      <link rel="stylesheet" href="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/css/L.Control.OpenCageSearch.dev.css" />
+     <script src="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/js/L.Control.OpenCageSearch.dev.js"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+     <link rel ="stylesheet" href ="style.css" />
 
-<link rel="stylesheet" href="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/css/L.Control.OpenCageSearch.dev.css" />
-<script src="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/js/L.Control.OpenCageSearch.dev.js"></script>
-
-<link ref =“stylesheet” href =“style.css”  type=“text/css” />
       <title> Plannr</title>
 
    </head>
-  <body>
+
+   <body>
 
     <form method="post" action="/address" class="address">
       <p class="title">Plan Your Next Destination</p>
@@ -22,10 +26,11 @@
       <input type="submit" value="Submit" id="submit">
     </form>
 
-<div id="map"></div>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-<script src="app.js"></script>
+    <div id="map"></div>
 
-</body>
 
-</hmtl>
+
+    <script src="app.js"></script>
+  </body>
+
+</html>
