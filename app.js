@@ -46,6 +46,7 @@ map.on( "click", function( event ){
   .openOn( map );
   coords.push([event.latlng.lat, event.latlng.lng]);
   console.log(coords);
+  L.polyline(coords).addTo(map);
 });
 
 var monumentTrail = {
