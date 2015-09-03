@@ -34,15 +34,20 @@ var washington = L.polygon([
     [38.791605, -77.038860]
 ]).addTo(map);
 
-
+var coords = [];
 var clickPopup = L.popup();
 
 map.on( "click", function( event ){
+  console.log(event);
+  // var coords = [];
   clickPopup
   .setLatLng( event.latlng )
   .setContent( "Coordinates: " + event.latlng.toString() )
   .openOn( map );
+  coords.push([event.latlng.lat, event.latlng.lng]);
+  console.log(coords);
 });
+
 var monumentTrail = {
   "type": "Feature",
 
