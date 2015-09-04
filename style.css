@@ -1,0 +1,11 @@
+#map {
+  height: 500px;
+}
+
+body {
+  background: #222;
+  color: whitesmoke;
+  font-family: helvetica;
+  font-weight: 100;
+  text-align: center;
+}
