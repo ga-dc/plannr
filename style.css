@@ -1,0 +1,27 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+}
+
+#map {
+  height: 500px;    /* Let's give our map a height so we can see it. */
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 20em;
+}
+
+input, textarea, button {
+  display: block;
+  margin-bottom: 1em;
+}
