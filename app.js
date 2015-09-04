@@ -1,40 +1,76 @@
-$(document).ready(function(){
-// Create map
-var map = L.map("map").setView([38.9038829, -77.0360032], 15);
+var Map = function(){
 
-// add tiling
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    maxZoom: 18,
+  this.numMarkers = 0;
+  this.geoJsonPlaces = [];
+  self = this;
 
-// Replace the below properties with your `Map ID` and `Default Public Token` values you saved earlier, respectively.
-    id: 'ktw1222.e76678cc',
-    accessToken: 'pk.eyJ1Ijoia3R3MTIyMiIsImEiOiI5Y2ZhYjI0NGI1M2YxMDhjODRmYWQxZTFmYzgwZmNhZiJ9.q3DvxR-n8yGXebhXdgOGpw'
-}).addTo(map);
+  // button click handle
+  $("#submit").on( "click", function(){
+      event.preventDefault();
+      var searchPlace = $("#destination").val()
+      $.ajax({
+        url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchPlace + "&pretty=1&key=862233671407c30d908b241585ec93d3"
+      }).done( function( res ){
+        response = res.results[0];
 
-// button click handle
-$("#submit").on( "click", function(){
-    event.preventDefault();
-    var searchPlace = $("#destination").val()
-    $.ajax({
-      url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchPlace + "&pretty=1&key=862233671407c30d908b241585ec93d3"
-    }).done( function( res ){
-      response = res.results[0];
+        // Save response values: latitude, longitude, location name
+        var lat = response.geometry.lat;
+        var lng = response.geometry.lng;
+        var name = response.components.attraction || response.components.building
+        self.geoJsonPlaces.push([ lng, lat ]);
 
-      // Save response values: latitude, longitude, location name
-      var lat = response.geometry.lat;
-      var lng = response.geometry.lng;
-      var name = response.components.attraction || response.components.building
-      self.geoJsonPlaces.push([ lng, lat ]);
-
-      // Run rendering methods for markers, popups and, if necessary, lines
-      self.addMarkerPopup( lat, lng, name );
-      self.numMarkers++;
-      if( self.numMarkers > 1 ){
-        self.connectMarkers();
-      }
+        // Run rendering methods for markers, popups and, if necessary, lines
+        self.addMarkerPopup( lat, lng, name );
+        self.numMarkers++;
+        if( self.numMarkers > 1 ){
+          self.connectMarkers();
+        }
+      });
     });
-  });
 
+    this.renderMap = function(){
+    // Create map
+    var map = L.map("map").setView([38.9038829, -77.0360032], 15);
+
+    // add tiling
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      maxZoom: 18,
+
+      // Replace the below properties with your `Map ID` and `Default Public Token` values you saved earlier, respectively.
+      id: 'ktw1222.e76678cc',
+      accessToken: 'pk.eyJ1Ijoia3R3MTIyMiIsImEiOiI5Y2ZhYjI0NGI1M2YxMDhjODRmYWQxZTFmYzgwZmNhZiJ9.q3DvxR-n8yGXebhXdgOGpw'
+    }).addTo(map);
+
+    return map;
+  }
+
+  this.addMarkerPopup = function( lat, lng, name ){
+      // Add marker and popup to map
+      var loc = L.marker( [ lat, lng ] ).addTo( map );
+      loc.bindPopup( name + "<br/><br/>" + "<span>To-Do</span><ul><li>" + $( "#action" ).val() + "</li></ul>" );
+    };
+
+    this.connectMarkers = function(){
+      // Save length of geoJsonPlaces array
+      var numPlace = self.geoJsonPlaces.length - 1
+
+      // Generate geoJSON string
+      var connection = {
+        "type": "LineString",
+        "coordinates": [
+          [ self.geoJsonPlaces[ numPlace-1 ][0], self.geoJsonPlaces[ numPlace-1 ][1] ],
+          [ self.geoJsonPlaces[ numPlace ][0], self.geoJsonPlaces[ numPlace ][1] ]
+        ]
+      };
+      // Attach geoJSON object to map
+      L.geoJson( connection ).addTo( map );
+    };
+  }
+
+$(document).ready(function(){
+  var app = new Map();
+  map = app.renderMap();
+})
 
 
 // marker and polygon exercises
@@ -70,5 +106,3 @@ $("#submit").on( "click", function(){
 //   .setContent( "Coordinates: " + event.latlng.toString() )
 //   .openOn( map );
 // })
-
-}) //closing
