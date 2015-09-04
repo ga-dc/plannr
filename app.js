@@ -40,8 +40,6 @@ var roadTrip = {
   // Can set "properties" to whatever we want.
   "properties": {
     "name": "My Road Trip",
-    "city": "Washington, DC",
-    "numStops": num
   },
 
   // Set geometry type here.
