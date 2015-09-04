@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+body{
+	background: url("http://www.transparenttextures.com/patterns/absurdity.png");
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+}
+input{
+	display: block;
+}
+
+#digital_map{
+	height: 600px;
+}
