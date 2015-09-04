@@ -10,7 +10,13 @@ var redhawk = L.marker([38.977554,-78.255478]).addTo(map);
 
 redhawk.bindPopup("<h3>HOME</h3>");
 
+var userLocation;
+var tripSpots = [];
 
 $("#submit").on("click", function(){
-  alert("Thanks!");
+  alert("Sounds awesome!");
+  userLocation = $("#city").val();
+  tripSpots.push(userLocation);
 });
+
+console.log(tripSpots);
