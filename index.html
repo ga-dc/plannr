@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>plann-r</title>
+
+  <!-- Leaflet stylesheet -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>plann-r</h1>
+    <form id="search">
+      <input id="destName" type="text" placeholder="Enter a destination">
+      <textarea id="destNotes" placeholder="What would you like to see here?"></textarea>
+      <button id="submit">Seek!</button>
+    </form>
+  <!-- Let's also create a container for our map -->
+  <div id="map"></div>
+
+  <!-- Leaflet script -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <!-- Our script -->
+  <script src="app.js"></script>
+</body>
+</html>
