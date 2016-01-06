@@ -1,0 +1,12 @@
+.locForm {
+    margin: 15px;
+    background-color: #eee;
+}
+
+#map {
+  height: 500px;
+}
+
+button {
+    margin: 10px;
+}

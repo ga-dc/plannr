@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+
+        <!-- ======= ======= ======= styles ======= ======= ======= -->
+        <title> map </title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="style.css" type="text/css">
+
+        <!-- Leaflet stylesheet -->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+	</head>
+	<body>
+
+		<!-- ======= ======= ======= form ======= ======= ======= -->
+		<div class="locForm">
+			<form id="locForm" class="locForm" name="mapAddress" method="post">
+                <p class="locForm"><label>location</label>
+                    <input id="searchLoc" type="text" name="address" value="Washington, dc"></p>
+				<p class="locForm">
+                    <input id="submitAddressBtn" type="button" value="pit stop">
+                    <input id="plotTripRouteBtn" type="button" value="trip route">
+                    <input id="newTripBtn" type="button" value="new trip"></p>
+			</form>
+		</div>
+
+
+		<!-- ======= ======= ======= content ======= ======= ======= -->
+		<div id="map"></div>
+
+
+		<!-- ======= ======= ======= scripts ======= ======= ======= -->
+        <!-- jQuery script -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<!-- Leaflet script -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+		<!-- map script -->
+		<script src="app.js"></script>
+
+		<!-- init script -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				console.log('jQuery loaded');
+				console.log('document ready');
+				init();
+			});
+		</script>
+
+	</body>
+</html>
