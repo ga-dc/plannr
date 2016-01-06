@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mappr/Plannr</title>
+  <!--below is the stylesheet for leaflet-->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Mappr/Plannr</h1>
+  <form id="search">
+    <input id="placeName" type="text" placeholder="Please enter where you want to go.">
+    <textarea id="notes" placeholder="Notes"></textarea>
+    <button id="submit">Go!</button>
+  </form>
+  <div id="map"></div>
+</body>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="app.js"></script>
+</html>

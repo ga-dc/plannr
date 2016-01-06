@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+#map {
+  height: 500px;
+}
+
+h1 {
+  color: #999999;
+}
+
+button {
+  border: none;
+  border-radius: 5%;
+  padding: 0.5em;
+  background-color: blue;
+  color: orange;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 20%;
+}
+
+input, textarea, button {
+  display: block;
+  margin-bottom: 1em;
+}
