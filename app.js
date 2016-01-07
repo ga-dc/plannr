@@ -8,11 +8,24 @@ $(document).ready(function(){
     accessToken: "pk.eyJ1IjoibHk5MDAiLCJhIjoiY2lqMzhudzhwMDA0anR0a25reHEyNnhpNSJ9.rSE15jZBQeMwkzATpFc6-w"
   }).addTo(myMap);
 
-  var url = "https://api.opencagedata.com/geocode/v1/geojson?q=Rua%20Cafel%C3%A2ndia,+Carapicu%C3%ADba,+Brasil&key=d6cd180045b55f5870050809aa14629e&pretty=1";
 
-  $.get(url, function(response){
-    console.log(response);
-  });
+  $("button").on("click", capturePlace);
+
+  function capturePlace(){
+    var userPlace = $("input#place").val();
+    console.log(userPlace);
+    ajaxRequest(userPlace);
+  }
+
+  function ajaxRequest(userPlace){
+    var url = "https://api.opencagedata.com/geocode/v1/geojson?q='" + userPlace + "'&key=d6cd180045b55f5870050809aa14629e&pretty=1";
+
+    $.get(url, function(response){
+      console.log(response);
+    });
+  }
+
+
 
 
 
