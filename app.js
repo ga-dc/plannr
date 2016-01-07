@@ -14,10 +14,10 @@ $(document).ready(function(){
   function capturePlace(){
     var userPlace = $("input#place").val();
     console.log(userPlace);
-    ajaxRequest(userPlace);
+    ajaxCoordinates(userPlace);
   };
 
-  function ajaxRequest(userPlace){
+  function ajaxCoordinates(userPlace){
     var url = "https://api.opencagedata.com/geocode/v1/geojson?q='" + userPlace + "'&key=d6cd180045b55f5870050809aa14629e&pretty=1";
 
     $.get(url, function(response){
@@ -25,18 +25,26 @@ $(document).ready(function(){
     })
     .done(function(response){
       var coordinates = response.features[0].geometry.coordinates;
-      console.log(coordinates);
+      var lat = coordinates[1];
+      var long = coordinates[0];
+      console.log(lat);
+      console.log(long);
+      createMarker(lat, long);
     })
-    .fail(function() {
-      console.log("error"); 
+    .fail(function(response) {
+      console.log("error");
     })
-    .always(function() {
+    .always(function(response) {
       console.log("always");
     });
 
   }; // ends ajacRequest function
 
-
+  function createMarker(lat, long){
+    console.log(lat);
+    console.log(long);
+    L.marker([lat, long]).addTo(myMap);  
+  }
 
 
 
