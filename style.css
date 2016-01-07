@@ -25,7 +25,13 @@ h1 {
   text-align: center;
 }
 
-p {
+
+h2 {
+  font-size: 2rem;
+}
+
+p,
+h2 {
   margin: 1rem;
 }
 
@@ -77,11 +83,20 @@ button:active {
 }
 
 div#map {
-  margin: 5% auto;
+  margin: 1% auto;
 }
 
 #map {
-  height: 300px;
-  width: 500px;
-  margin: 5% auto;
+  height: 378px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+div.map-countries-container {
+  display:flex;
+  flex-direction: column;
+}
+
+section.places {
+  margin: 0 auto;
 }

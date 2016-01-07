@@ -31,10 +31,10 @@ $(document).ready(function(){
       console.log(long);
       createMarker(lat, long, userPlace);
     })
-    .fail(function(response) {
+    .fail(function(response){
       console.log("error");
     })
-    .always(function(response) {
+    .always(function(response){
     });
   }; // ends ajaxCoordinates function
 
@@ -47,14 +47,17 @@ $(document).ready(function(){
 
   function createPopup(lat, long, userPlace, marker){
     var Popup = L.popup();
+    var note = $("textarea#note").val();
     console.log(lat);
     console.log(long);
     console.log(marker);
-    marker.bindPopup(userPlace + "</br>Lat: " + lat + "</br>Long: " + long).openPopup();
+    marker.bindPopup(userPlace + "</br>Lat: " + lat + "</br>Long: " + long + "</br>" + note).openPopup();
+    addPlace(userPlace);
   };
 
-
-
+  function addPlace(userPlace){
+    $("div#places").append("<p>" + userPlace + "</p>")
+  };
 
 
 
