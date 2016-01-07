@@ -11,6 +11,7 @@ html, body, header, h1, form, label, div {
 
 body {
   letter-spacing: 1px;
+  background-color: #F7F7F7;
 }
 
 header {
@@ -39,6 +40,7 @@ div.container {
 div.form {
   display: inline-block;
   max-width: 60%;
+  align-self: center;
   /*border: 1px solid black;*/
 }
 
@@ -68,4 +70,14 @@ button:hover {
 
 button:active {
   background-color: #FF7100;
+}
+
+div#map {
+  margin: 5% auto;
+}
+
+#map {
+  height: 300px;
+  width: 500px;
+  margin: 5% auto;
 }

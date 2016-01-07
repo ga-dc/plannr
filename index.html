@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Plannr</title>
+  <!-- Leaflet Stylesheet -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
+
+  <!-- My Stylesheet -->
   <link rel="stylesheet" href="style.css" type="text/css"/>
+
 </head>
 <body>
 <header>
@@ -13,16 +18,31 @@
     <div class="form">
       <form>
         <label>Name of Place:</label>
-        <input type="text" placeholder="Name of place" id="place"/></br>
+        <input type="text" placeholder="Name of place" id="place"/>
         <label class="note">Note About Place:</label>
-        <input type="text" placeholder="Note about Place" id="note"/></br>
-
+        <input type="text" placeholder="Note about Place" id="note"/>
       </form>
     </div>
+
     <div class="button">
       <button>Submit</button>
     </div>
+
   </div> <!-- ends container div -->
 </header>
+<section>
+  <div id="map"></div>
+
+</section>
+
+<!-- Leaflet Script -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+<!-- JQuery Library -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- My Script -->
+<script src="app.js"></script>
+
 </body>
 </html>
