@@ -20,7 +20,7 @@ $(document).ready(function(){
   function ajaxCoordinates(userPlace){
     var url = "https://api.opencagedata.com/geocode/v1/geojson?q='" + userPlace + "'&key=d6cd180045b55f5870050809aa14629e&pretty=1";
 
-    $.get(url, function(response){
+    $.get(url, function(response, event){
       console.log(response);
     })
     .done(function(response){
@@ -29,22 +29,31 @@ $(document).ready(function(){
       var long = coordinates[0];
       console.log(lat);
       console.log(long);
-      createMarker(lat, long);
+      createMarker(lat, long, userPlace);
     })
     .fail(function(response) {
       console.log("error");
     })
     .always(function(response) {
-      console.log("always");
     });
+  }; // ends ajaxCoordinates function
 
-  }; // ends ajacRequest function
-
-  function createMarker(lat, long){
+  function createMarker(lat, long, userPlace){
     console.log(lat);
     console.log(long);
-    L.marker([lat, long]).addTo(myMap);  
-  }
+    var marker = L.marker([lat, long]).addTo(myMap);
+    createPopup(lat, long, userPlace, marker);
+  };
+
+  function createPopup(lat, long, userPlace, marker){
+    var Popup = L.popup();
+    console.log(lat);
+    console.log(long);
+    console.log(marker);
+    marker.bindPopup(userPlace + "</br>Lat: " + lat + "</br>Long: " + long).openPopup();
+  };
+
+
 
 
 
