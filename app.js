@@ -15,15 +15,26 @@ $(document).ready(function(){
     var userPlace = $("input#place").val();
     console.log(userPlace);
     ajaxRequest(userPlace);
-  }
+  };
 
   function ajaxRequest(userPlace){
     var url = "https://api.opencagedata.com/geocode/v1/geojson?q='" + userPlace + "'&key=d6cd180045b55f5870050809aa14629e&pretty=1";
 
     $.get(url, function(response){
       console.log(response);
+    })
+    .done(function(response){
+      var coordinates = response.features[0].geometry.coordinates;
+      console.log(coordinates);
+    })
+    .fail(function() {
+      console.log("error"); 
+    })
+    .always(function() {
+      console.log("always");
     });
-  }
+
+  }; // ends ajacRequest function
 
 
 
