@@ -1,0 +1,27 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Fun with Mapz!</title>
+
+  <!-- Leaflet stylesheet -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <form id="search">
+    <input type="search" name="location" id="location" placeholder="enter location"/>
+    <input type="comment" name="comment" id="comment" placeholder="enter comment"/>
+    <button type='button' class = "search">Search</button>
+  </form>
+  <!-- Let's also create a container for our map -->
+  <div id="map"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <!-- Leaflet script -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+  <!-- Our script -->
+  <script src="app.js"></script>
+</body>
