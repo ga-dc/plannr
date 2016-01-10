@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plannr</title>
+
+  <!-- Leaflet stylesheet -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+  <div>
+    <h1>Plannr</h1>
+    <form id="inputForm">
+      <input type="text" name="location" placeholder="Location" id="userLocation">
+      <input type="text" name="note" placeholder="Add a note..." id="userNote">
+      <input type="submit" id="submitButton">
+    </form>
+  </div>
+  <!-- Let's also create a container for our map -->
+  <div id="map"></div>
+
+  <!-- Leaflet script -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+  <!-- Our script -->
+  <script src="app.js"></script>
+</body>
+</html>
