@@ -20,21 +20,22 @@ $(document).ready(function(){
   function ajaxCoordinates(userPlace){
     var url = "https://api.opencagedata.com/geocode/v1/geojson?q='" + userPlace + "'&key=d6cd180045b55f5870050809aa14629e&pretty=1";
 
-    $.get(url, function(response, event){
-      console.log(response);
+    $.get(url, function(data){
+      console.log(data);
     })
-    .done(function(response){
-      var coordinates = response.features[0].geometry.coordinates;
+    .done(function(data){
+      var coordinates = data.features[0].geometry.coordinates;
       var lat = coordinates[1];
       var long = coordinates[0];
       console.log(lat);
       console.log(long);
       createMarker(lat, long, userPlace);
     })
-    .fail(function(response){
+    .fail(function(){
       console.log("error");
     })
-    .always(function(response){
+    .always(function(){
+      console.log("You made a request!");
     });
   }; // ends ajaxCoordinates function
 
