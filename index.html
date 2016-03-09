@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travelr</title>
+
+  <!-- Leaflet Stylesheet -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
+
+  <!-- My Stylesheet -->
+  <link rel="stylesheet" href="style.css" type="text/css"/>
+
+</head>
+<body>
+<header>
+  <h1>Travlr!</h1>
+  <p>
+    Want to track all the places you've traveled to around the world? Let Travlr! map the countries you've visited!
+  </p>
+  <div class="container">
+    <div class="form">
+      <form>
+        <label>Name of Place:</label>
+        <input type="text" placeholder="Hanoi, Vietnam" id="place" value="Hanoi, Vietnam"/>
+        <label class="note">Note About Place:</label>
+        <textarea placeholder="Visit North Vietnam for the first time" id="note"></textarea>
+      </form>
+    </div>
+
+    <div class="button">
+      <button>Submit</button>
+    </div>
+
+  </div> <!-- ends container div -->
+</header>
+
+<div class="map-countries-container">
+
+  <section>
+    <div id="map"></div>
+  </section>
+
+  <section class="places">
+    <h2>Places:</h2>
+    <div id="places"><div>
+  </section>
+
+</div> <!-- ends map-countries-container div -->
+
+<!-- Leaflet Script -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+<!-- JQuery Library -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- My Script -->
+<script src="app.js"></script>
+
+</body>
+</html>

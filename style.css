@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html, body, header, h1, form, label, div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+}
+
+body {
+  letter-spacing: 1px;
+  background-color: #F7F7F7;
+}
+
+header {
+  background-color: #EDEDEE;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #E2E2E2;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+
+h2 {
+  font-size: 2rem;
+}
+
+p,
+h2 {
+  margin: 1rem;
+}
+
+input, label {
+  margin: .5rem;
+}
+
+div.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /*border: 1px solid blue;*/
+  flex-wrap: wrap;
+}
+
+div.form {
+  display: inline-block;
+  max-width: 60%;
+  align-self: center;
+  /*border: 1px solid black;*/
+}
+
+div.button {
+  display: inline-block;
+  max-width: 40%;
+  align-self: center;
+  text-align: center;
+  margin: 0 auto;
+  /*border: 1px solid black;*/
+}
+
+button {
+  min-width: 150px;
+  min-height: 60px;
+  border: none;
+  border-radius: 100%;
+  background-color: #6AF800;
+  font-size: 2rem;
+  box-shadow: 0px 9px 18px gray;
+}
+
+button:hover {
+  background-color: #F2D300;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #FF7100;
+}
+
+div#map {
+  margin: 1% auto;
+}
+
+#map {
+  height: 378px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+div.map-countries-container {
+  display:flex;
+  flex-direction: column;
+}
+
+section.places {
+  margin: 0 auto;
+}
