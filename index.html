@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fun with Mapz!</title>
+
+  <!-- Leaflet stylesheet -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <body>
+    <h1>Welcome to Mapper!</h1>
+    <!-- Let's also create a container for our map -->
+    <div id="map"></div>
+
+    <form id ="form">
+      <label for="locationName">Location:</label>
+      <input id="locationID" type="text" name="locationName">
+      <input type="submit" value="Save">
+    </form>
+
+    <!-- Leaflet script -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+    <!-- Our script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </body>
+</html>
