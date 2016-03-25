@@ -1,0 +1,7 @@
+body {
+  padding-top: 15px;
+}
+
+#map {
+  height: 750px;    /* Let's give our map a height so we can see it. */
+}
